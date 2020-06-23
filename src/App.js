@@ -38,7 +38,7 @@ function App() {
         setTips(INITIAL_TIPS);
         setIsProcessing(true);
         const fs = e.dataTransfer ? e.dataTransfer.files : e.target.files;
-        file_name = fs[0].name;
+        file_name = fs[0].name.split('.')[0];
         const type = fs[0].type;
         console.log(type)
         if (type !== 'application/pdf') return;
