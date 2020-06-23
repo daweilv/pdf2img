@@ -5,7 +5,7 @@ import {saveAs} from 'file-saver';
 
 const INITIAL_TIPS = '点击选择文件上传 或 拖动图片到此';
 const HELP_TIPS = '松开鼠标以上传图片'
-let pdfDoc;
+let pdfDoc,file_name;
 const zip = new JSZip();
 
 function App() {
@@ -38,6 +38,7 @@ function App() {
         setTips(INITIAL_TIPS);
         setIsProcessing(true);
         const fs = e.dataTransfer ? e.dataTransfer.files : e.target.files;
+        file_name = fs[0].name;
         const type = fs[0].type;
         console.log(type)
         if (type !== 'application/pdf') return;
@@ -88,7 +89,7 @@ function App() {
     function downloadImgs() {
         zip.generateAsync({type: "blob"})
             .then(function (content) {
-                saveAs(content, "images.zip");
+                saveAs(content, `${file_name}.zip`);
             });
     }
 
