@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^7.2.1",
     "antd": "^4.3.4",
     "file-saver": "^2.0.2",
-    "jszip": "^3.5.0",
+    "jszip": "^3.8.0",
     "node-sass": "^4.14.1",
     "pdfjs-dist": "^2.4.456",
     "react": "^16.13.1",
